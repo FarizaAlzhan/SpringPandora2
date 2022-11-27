@@ -2,6 +2,7 @@ package kz.narxoz.springpandora2.Controller;
 import kz.narxoz.springpandora2.Entity.Bracelets;
 import kz.narxoz.springpandora2.Service.BraceletsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,17 +14,19 @@ public class BraceletsController {
     private BraceletsService braceletService;
 
     @GetMapping("/bracelets")
+    @PreAuthorize("isAuthenticated()")
     public String bracelets(Model model){
         model.addAttribute("bracelets", braceletService.findAllBracelets());
-        return "bracelets";
+        return "Home";
     }
 
 
     @GetMapping("/bracelets/new")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String addBraceletForm(Model model){
         Bracelets bracelet = new Bracelets();
         model.addAttribute("bracelet", bracelet);
-        return "add_bracelet";
+        return "Home";
     }
 
     @GetMapping("/bracelets/update/{id}")

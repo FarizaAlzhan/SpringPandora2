@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component("RingsService")
+@Component("PendantsService")
 public class PendantsServiceImpl implements PendantsService {
     @Autowired
     PendantsRepository pendantsRepository;
