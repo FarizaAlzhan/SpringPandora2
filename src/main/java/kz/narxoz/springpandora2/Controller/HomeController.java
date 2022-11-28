@@ -12,6 +12,9 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
@@ -34,10 +37,12 @@ public class HomeController {
     public String accessDenied(Model model){
         return "403";
     }
+
     @GetMapping(value = "/login")
     public String login(){
         return "login";
     }
+
     @GetMapping(value = "/example")
     @PreAuthorize("isAuthenticated()")
     public String example(Model model){
@@ -46,6 +51,34 @@ public class HomeController {
         return "example";
     }
 
+
+    @GetMapping(value = "/register")
+    public String register(Model model){
+        model.addAttribute("currentUser", getUserData());
+        return "register";
+    }
+
+    @PostMapping(value = "/register")
+    public String toRegister(@RequestParam(name = "user_email") String email,
+                             @RequestParam(name = "user_full_name") String fullName,
+                             @RequestParam(name = "user_password") String password,
+                             @RequestParam(name = "re_user_password") String Repassword
+                             ) {
+
+        if (password.equals(Repassword)){
+
+            Users newUser = new Users();
+            newUser.setFull_name(fullName);
+            newUser.setPassword(password);
+            newUser.setEmail(email);
+            if (userService.createUser(newUser)!=null){
+                return "redirect:/register?success";
+            }
+
+        }
+        return "redirect:/register?error";
+
+    }
     private Users getUserData(){
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -59,5 +92,6 @@ public class HomeController {
                 }
                 return null;
     }
+
 
 }
