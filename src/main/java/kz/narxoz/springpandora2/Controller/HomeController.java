@@ -13,7 +13,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -43,12 +42,12 @@ public class HomeController {
         return "login";
     }
 
-    @GetMapping(value = "/example")
+    @GetMapping(value = "/welcome")
     @PreAuthorize("isAuthenticated()")
-    public String example(Model model){
+    public String welcome(Model model){
 
         model.addAttribute("currentUser", getUserData());
-        return "example";
+        return "welcome";
     }
 
 

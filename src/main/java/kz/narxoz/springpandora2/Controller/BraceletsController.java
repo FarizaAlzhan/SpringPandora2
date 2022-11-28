@@ -17,7 +17,7 @@ public class BraceletsController {
     @PreAuthorize("isAuthenticated()")
     public String bracelets(Model model){
         model.addAttribute("bracelets", braceletService.findAllBracelets());
-        return "Home";
+        return "bracelets";
     }
 
 
@@ -30,18 +30,21 @@ public class BraceletsController {
     }
 
     @GetMapping("/bracelets/update/{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String updateBraceletForm(Model model, @PathVariable("id") Long id){
         Bracelets bracelet = braceletService.findBracelet(id);
         model.addAttribute("bracelet", bracelet);
         return "update_bracelet";
     }
     @GetMapping("/bracelets/delete/{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String deleteBracelet(@PathVariable("id") Long id) {
         braceletService.deleteBracelets(id);
         return "redirect:/bracelets";
     }
 
     @PostMapping("/bracelets/update/{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String updateBracelet(@PathVariable("id") Long id, @ModelAttribute("bracelet") Bracelets bracelets){
         Bracelets myBracelet = braceletService.findBracelet(id);
         myBracelet = bracelets;
@@ -50,6 +53,7 @@ public class BraceletsController {
     }
 
     @PostMapping("/bracelets")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String saveBracelet(@ModelAttribute("bracelet") Bracelets bracelets){
         braceletService.saveBracelets(bracelets);
         return "redirect:/bracelets";
