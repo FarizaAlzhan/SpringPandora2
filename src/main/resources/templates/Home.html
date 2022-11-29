@@ -21,18 +21,15 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
-
         </tr>
         </thead>
         <tbody>
         <tr th:each="category: ${category}">
             <td th:text="${category.getId()}"></td>
             <td th:text="${category.getName()}"></td>
-
         </tr>
         </tbody>
     </table>
-
 </div>
 </body>
 </html>
