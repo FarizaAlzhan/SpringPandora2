@@ -15,7 +15,7 @@
     <div class="card" style="width: 22rem; height: 27rem; margin-left: 21px; margin-right: 16px;">
         <div class="card-body">
             <tr th:each="charm: ${charms}">
-                <img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:230px; width:310px;" th:src="@{'/images/' + ${charm.image}}" alt="">
+                <img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:230px; width:310px;" th:src="@{'images/' + ${charm.image}}" alt="">
             <h3
                 th:text="${charm.getName()}">
             </h3>
