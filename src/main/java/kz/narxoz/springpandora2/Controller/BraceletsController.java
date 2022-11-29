@@ -14,7 +14,6 @@ public class BraceletsController {
     private BraceletsService braceletService;
 
     @GetMapping("/bracelets")
-    @PreAuthorize("isAuthenticated()")
     public String bracelets(Model model){
         model.addAttribute("bracelets", braceletService.findAllBracelets());
         return "bracelets";
