@@ -26,7 +26,7 @@ public class BraceletsController {
     public String addBraceletForm(Model model){
         Bracelets bracelet = new Bracelets();
         model.addAttribute("bracelet", bracelet);
-        return "Home";
+        return "add_bracelet";
     }
 
     @GetMapping("/bracelets/update/{id}")

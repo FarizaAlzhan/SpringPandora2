@@ -32,7 +32,7 @@ public class CollectionsController {
     public String addCollectionForm(Model model){
         Collections collection = new Collections();
         model.addAttribute("collections", collection);
-        return "add_collections";
+        return "add_collection";
     }
 
     @GetMapping("/collections/update/{id}")

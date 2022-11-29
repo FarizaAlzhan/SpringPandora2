@@ -30,7 +30,7 @@ public class CharmsController {
     public String addCharmForm(Model model){
         Charms charm = new Charms();
         model.addAttribute("charms", charm);
-        return "add_charms";
+        return "add_charm";
     }
 
     @GetMapping("/charms/update/{id}")

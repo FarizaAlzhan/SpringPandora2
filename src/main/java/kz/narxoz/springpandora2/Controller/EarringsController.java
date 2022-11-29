@@ -30,7 +30,7 @@ public class EarringsController {
     public String addEarringForm(Model model){
         Earrings earring = new Earrings();
         model.addAttribute("earring", earring);
-        return "add_earrings";
+        return "add_earring";
     }
 
     @GetMapping("/earrings/update/{id}")
