@@ -7,29 +7,94 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
-<body background="data:image/jpeg;base64,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">
+<style type="text/css">
+    A:{
+        color: hotpink; /* Цвет ссылок */
+    }
+    A:visited {
+        color: black; /* Цвет посещенных ссылок */
+    }
+    A:active {
+        color: hotpink; /* Цвет активных ссылок */
+    }
+</style>
+<body >
 <div th:insert="navbar.html :: header"><br>
+</div>
+        <div class="album py-2 px-5 mx-4 bg-light">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="https://pandora.kz/upload/iblock/984/98457a86a070eb4621a11b73789f39d4.png" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="https://www.dior.com/couture/var/dior/storage/images/37950172/15-eng-GB/30-montaigne10_1440_1200.png" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="https://cdn.shopify.com/s/files/1/1933/0009/files/22F_homepage-hero_soho-bite-size_1_2048x.png?v=1665004100" alt="Third slide">
+                        </div>
+                    </div>
+                </div>
 
-</div>
-<div class="container">
-    <div class="row">
-    </div>
-    <div class="row">
-    </div>
-    <table class="table table-striped">
-        <thead class="table-light">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="category: ${category}">
-            <td th:text="${category.getId()}"></td>
-            <td th:text="${category.getName()}"></td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+                <a class="btn btn-dark" style="margin-bottom: 30px; margin-top: 25px; margin-left: 510px;" >Go to create page</a>
+                <div class="row row-cols-1 row-cols-2 row-cols-md-3 g-3">
+                    <div class="card" style="width: 22rem; height: 27rem; margin-left: 21px; margin-right: 16px;">
+                            <a><img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:230px; width:310px;" ></a>
+                            <div class="card-body">
+                                <a  class="buttoncard" th:href="@{'/charms'}">
+                                 Шармы
+                                    </a>
+                            </div>
+                        </div>
+
+                    <div class="card" style="width: 22rem; height: 27rem; margin-left: 21px; margin-right: 16px;">
+                        <a><img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:230px; width:310px;" ></a>
+                        <div class="card-body">
+                            <a  class="buttoncard" th:href="@{'/rings'}">
+                                Кольца
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 22rem; height: 27rem; margin-left: 21px; margin-right: 16px;">
+                        <a><img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:230px; width:310px;" ></a>
+                        <div class="card-body">
+                            <a  class="buttoncard" th:href="@{'/bracelets'}">
+                                Браслеты
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 22rem; height: 27rem; margin-left: 21px; margin-right: 16px;">
+                        <a><img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:230px; width:310px;" ></a>
+                        <div class="card-body">
+                            <a  class="buttoncard" th:href="@{'/earrings'}">
+                                Серьги
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 22rem; height: 27rem; margin-left: 21px; margin-right: 16px;">
+                        <a><img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:230px; width:310px;" ></a>
+                        <div class="card-body">
+                            <a  class="buttoncard" th:href="@{'/pendants'}">
+                                Колье и подвески
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 22rem; height: 27rem; margin-left: 21px; margin-right: 16px;">
+                        <a><img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:230px; width:310px;" ></a>
+                        <div class="card-body">
+                            <a  class="buttoncard" th:href="@{'/collections'}">
+                                Коллекции
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
 </body>
 </html>
