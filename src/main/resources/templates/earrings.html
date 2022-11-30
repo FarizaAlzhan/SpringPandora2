@@ -21,7 +21,11 @@
             </h6>
                 <p th:text="${earring.getDescription()}">
                 </p>
-                <div class="product_price" th:text="${earring.getPrice()}">
+                <div class="product_price">
+                    <span th:text="${earring.getPrice()}"></span><br>
+                    <strike th:unless="${earring.getOldprice()} == 0">
+                        <span th:text="${earring.getOldprice()}"></span>
+                    </strike>
                 </div>
         </div>
     </div>

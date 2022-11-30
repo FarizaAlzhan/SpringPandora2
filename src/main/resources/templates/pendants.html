@@ -21,7 +21,11 @@
             </h3>
                 <p th:text="${pendant.getDescription()}">
                 </p>
-                <div class="product_price" th:text="${pendant.getPrice()}">
+                <div class="product_price">
+                    <span th:text="${pendant.getPrice()}"></span><br>
+                    <strike th:unless="${pendant.getOldprice()} == 0">
+                        <span th:text="${pendant.getOldprice()}"></span>
+                    </strike>
                 </div>
         </div>
     </div>

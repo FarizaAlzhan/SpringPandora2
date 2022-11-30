@@ -21,7 +21,11 @@
             </h3>
                 <p th:text="${ring.getDescription()}">
                 </p>
-                <div class="product_price" th:text="${ring.getPrice()}">
+                <div class="product_price">
+                    <span th:text="${ring.getPrice()}"></span><br>
+                    <strike th:unless="${ring.getOldprice()} == 0">
+                        <span th:text="${ring.getOldprice()}"></span>
+                    </strike>
                 </div>
         </div>
     </div>

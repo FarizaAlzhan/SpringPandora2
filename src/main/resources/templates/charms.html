@@ -21,7 +21,11 @@
             </h3>
                 <p th:text="${charm.getDescription()}">
                 </p>
-                <div class="product_price" th:text="${charm.getPrice()}">
+                <div class="product_price">
+                    <span th:text="${charm.getPrice()}"></span><br>
+                    <strike th:unless="${charm.getOldprice()} == 0">
+                        <span th:text="${charm.getOldprice()}"></span>
+                    </strike>
                 </div>
         </div>
     </div>
