@@ -28,6 +28,7 @@ public class HomeController {
 
     @GetMapping(value = "/")
     public String homepage(Model model){
+
         model.addAttribute("category", categoryService.findAllCategory());
         return "Home";
     }
