@@ -64,6 +64,19 @@
                                     </a>
                             </div>
                         </div>
+                    <div class="card" style="width: 22rem; height: 27rem; margin-left: 21px; margin-right: 16px;">
+                        <a href="{{route('products.show', $product->id)}}"><img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:230px; width:310px;" src={{$product->img}}></a>
+                        <div class="card-body">
+                            <h5 class="card-title">{{$charm->getName}}</h5>
+                            <h6 class="card-title">${{$charm->getPrice}}</h6>
+                            <p class="card-text">Author: {{$charm->brand}}</p>
+                            <form action="{{route('products.destroy',  $product->id)}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-outline-dark">Delete</button>
+                            </form>
+                        </div>
+                    </div>
 
                     <div class="card" style="width: 170px; height: 200px; margin-left: 16px; margin-right: 9px;">
                         <a><img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:105px; width:105px;" src="https://pandora.kz/upload/iblock/974/974963d98e4f1c09a61fe201f38ca8cb.png"></a>
