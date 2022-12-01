@@ -60,10 +60,10 @@ public class BraceletsController {
 
     @PostMapping("/adminbracelets")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public String saveBracelet(@ModelAttribute("bracelet") Bracelets bracelets){
-        braceletService.saveBracelets(bracelets);
-        return "redirect:/adminbracelets";
-    }
+        public String saveBracelet(@ModelAttribute("bracelet") Bracelets bracelets){
+            braceletService.saveBracelets(bracelets);
+            return "redirect:/adminbracelets";
+        }
 
 
 

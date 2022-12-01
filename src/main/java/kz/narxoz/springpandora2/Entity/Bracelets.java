@@ -24,7 +24,7 @@ public class Bracelets {
 
     private Integer price;
 
-    @Column(name = "oldprice", nullable = false)
+    @Column(name = "oldprice",nullable = false)
     private Integer oldprice;
 
 
