@@ -12,13 +12,13 @@
 </div>
 <body>
 <div class="row row-cols-1 row-cols-2 row-cols-md-3 g-3">
-    <div class="card" style="width: 22rem; height: 27rem; margin-left: 21px; margin-right: 16px;">
-        <div class="card-body">
-            <tr th:each="collection: ${collections}">
+    <div th:each="collection: ${collections}">
+        <div class="card" style="width: 22rem; height: 27rem; margin-left: 21px; margin-right: 16px;">
+            <div class="card-body">
                 <img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:250px; width:250px;" th:src="@{'images/' + ${collection.image}}" alt="">
-            <h3
-                th:text="${collection.getName()}">
-            </h3>
+                <h6
+                        th:text="${collection.getName()}">
+                </h6>
                 <p th:text="${collection.getDescription()}">
                 </p>
                 <div class="product_price">
@@ -27,6 +27,7 @@
                         <span th:text="${collection.getOldprice()}"></span>
                     </strike>
                 </div>
+            </div>
         </div>
     </div>
 </div>

@@ -21,6 +21,12 @@ public class RingsController {
         return "rings";
     }
 
+    @GetMapping("/adminrings")
+    public String adminrings(Model model){
+        model.addAttribute("rings", ringsService.findAllRings());
+        return "adminrings";
+    }
+
 
     @GetMapping("/rings/new")
     @PreAuthorize("hasRole('ROLE_ADMIN')")

@@ -23,6 +23,12 @@ public class EarringsController {
         model.addAttribute("earrings", earringsService.findAllEarrings());
         return "earrings";
     }
+    @GetMapping("/adminearrings")
+    public String adminearrings(Model model){
+        model.addAttribute("earrings", earringsService.findAllEarrings());
+        return "adminearrings";
+    }
+
 
 
     @GetMapping("/earrings/new")
