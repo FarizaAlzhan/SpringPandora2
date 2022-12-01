@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <title>Main page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body >
+<div th:insert="navbar.html :: header"></div>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-12">
+            <form th:action="@{/bracelets}" method="POST">
+                <div class="form-group">
+                    <label> Name of book</label>
+                    <input
+                            type="text"
+                            name="name"
+                            class="form-control"
+                            placeholder="Name"
+                    />
+                </div>
+                <div class="form-group">
+                    <label>Price</label>
+                    <input
+                            type="number"
+                            name="price"
+                            class="form-control"
+                            placeholder="Price"
+                    />
+                </div>
+                <div class="form-group">
+                    <label> Description</label>
+                    <input
+                            type="text"
+                            name="description"
+                            class="form-control"
+                            placeholder="Description"
+                    />
+                </div>
+                <div class="form-group">
+                    <label>Image</label>
+                    <input
+                            type="file"
+                            name="author"
+                            class="form-control"
+                            placeholder="Author"
+                    />
+                </div>
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary">ADD BRACELETS</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
