@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <title>Main page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body >
+<div th:insert="navbar.html :: header"></div>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-12">
+            <form th:action=" @{/adminbracelets/update/{id}(id=${pendant.getId()})}" method="POST">
+                <div class="form-group">
+                    <label>Название продукта: </label>
+                    <input
+                            th:value="${pendant.getName()}"
+                            name="name"
+                            class="form-control"
+                            placeholder="Введите название продукта"
+                    />
+                </div>
+                <div class="form-group">
+                    <label>Цена: </label>
+                    <input
+                            th:value="${pendant.getPrice()}"
+                            name="price"
+                            class="form-control"
+                            placeholder="Введите стоимость продукта"
+                    />
+                </div>
+                <div class="form-group">
+                    <label>Старая цена: </label>
+                    <input
+                            th:value="${pendant.getOldprice()}"
+                            name="oldprice"
+                            class="form-control"
+                            placeholder="Введите старую цену продукта"
+                    />
+                </div>
+                <div class="form-group">
+                    <label>Описание: </label>
+                    <input
+                            th:value="${pendant.getDescription()}"
+                            name="description"
+                            class="form-control"
+                            placeholder="Описание продукта"
+                    />
+                </div>
+                <div class="form-group">
+                    <label>Изображение: </label>
+                    <input
+                            th:value="${pendant.getImage()}"
+                            name="image"
+                            class="form-control"
+                            placeholder="Добавить изображение"
+                    />
+                </div>
+
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary" style="background-color: #f2a1b2">Добавить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
