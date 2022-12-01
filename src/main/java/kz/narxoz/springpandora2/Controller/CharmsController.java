@@ -23,6 +23,11 @@ public class CharmsController {
         model.addAttribute("charms", charmsService.findAllCharms());
         return "charms";
     }
+    @GetMapping("/admincharms")
+    public String admincharms(Model model){
+        model.addAttribute("charms", charmsService.findAllCharms());
+        return "admincharms";
+    }
 
 
     @GetMapping("/charms/new")

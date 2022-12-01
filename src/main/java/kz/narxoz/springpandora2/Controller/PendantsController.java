@@ -22,6 +22,11 @@ public class PendantsController {
         model.addAttribute("pendants", pendantsService.findAllPendants());
         return "pendants";
     }
+    @GetMapping("/adminpendants")
+    public String adminpendants(Model model){
+        model.addAttribute("pendants", pendantsService.findAllPendants());
+        return "adminpendants";
+    }
 
 
     @GetMapping("/pendants/new")

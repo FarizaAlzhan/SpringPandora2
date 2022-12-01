@@ -25,6 +25,11 @@ public class CollectionsController {
         model.addAttribute("collections", collectionsService.findAllCollections());
         return "collections";
     }
+    @GetMapping("/admincollections")
+    public String admincollections(Model model){
+        model.addAttribute("collections", collectionsService.findAllCollections());
+        return "admincollections";
+    }
 
 
     @GetMapping("/collections/new")

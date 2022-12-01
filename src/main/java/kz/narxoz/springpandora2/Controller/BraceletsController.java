@@ -19,6 +19,12 @@ public class BraceletsController {
         return "bracelets";
     }
 
+    @GetMapping("/adminbracelets")
+    public String adminbracelets(Model model){
+        model.addAttribute("bracelets", braceletService.findAllBracelets());
+        return "adminbracelets";
+    }
+
 
     @GetMapping("/bracelets/new")
     @PreAuthorize("hasRole('ROLE_ADMIN')")

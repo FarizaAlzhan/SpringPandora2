@@ -32,7 +32,7 @@
                 <a class="nav-link active" th:href="@{'/welcome'}" >Welcome</a>
             </li>
             <li class="nav-item" sec:authorize="hasRole('ROLE_ADMIN')">
-                <a class="nav-link active" th:href="@{'/bracelets/new'}" >Add new </a>
+                <a class="nav-link active" th:href="@{'/administration'}" >Изменение данных </a>
             </li>
 
             <li class="nav-item" sec:authorize="isAnonymous()" >

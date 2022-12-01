@@ -12,21 +12,24 @@
 </div>
 <body>
 <div class="row row-cols-1 row-cols-2 row-cols-md-3 g-3">
-    <div th:each="earring: ${earrings}">
-        <div class="card" style="width: 22rem; height: 27rem; margin-left: 21px; margin-right: 16px;">
+    <div th:each="ring: ${rings}">
+        <div class="card" style="width: 22rem; height: 35rem; margin-left: 21px; margin-right: 16px;">
             <div class="card-body">
-                <img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:250px; width:250px;" th:src="@{'images/' + ${earring.image}}" alt="">
+                <img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:250px; width:250px;" th:src="@{'images/' + ${ring.image}}" alt="">
                 <h6
-                        th:text="${earring.getName()}">
+                        th:text="${ring.getName()}">
                 </h6>
-                <p th:text="${earring.getDescription()}">
+                <p th:text="${ring.getDescription()}">
                 </p>
                 <div class="product_price">
-                    <span th:text="${earring.getPrice()}"></span><br>
-                    <strike th:unless="${earring.getOldprice()} == 0">
-                        <span th:text="${earring.getOldprice()}"></span>
+                    <span th:text="${ring.getPrice()}"></span><br>
+                    <strike th:unless="${ring.getOldprice()} == 0">
+                        <span th:text="${ring.getOldprice()}"></span>
                     </strike>
                 </div>
+                <a th:href="@{/rings/update/{id}(id=${ring.getId()})}" class="btn btn-primary btn-md mb-3">EDIT</a>
+                <a th:href="@{/rings/delete/{id}(id=${ring.getId()})}" class="btn btn-danger btn-md mb-3">DELETE</a>
+                <a th:href="@{/rings/new}"  class="btn btn-warning btn-md mb-3">ADD NEW </a>
             </div>
         </div>
     </div>

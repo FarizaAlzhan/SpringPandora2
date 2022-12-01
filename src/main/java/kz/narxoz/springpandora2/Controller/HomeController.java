@@ -53,6 +53,13 @@ public class HomeController {
     }
 
 
+    @GetMapping(value = "/administration")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public String addnewthing(){
+
+        return "administration";
+    }
+
     @GetMapping(value = "/register")
     public String register(Model model){
         model.addAttribute("currentUser", getUserData());
