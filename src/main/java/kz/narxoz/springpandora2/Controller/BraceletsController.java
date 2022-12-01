@@ -20,13 +20,14 @@ public class BraceletsController {
     }
 
     @GetMapping("/adminbracelets")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String adminbracelets(Model model){
         model.addAttribute("bracelets", braceletService.findAllBracelets());
         return "adminbracelets";
     }
 
 
-    @GetMapping("/bracelets/new")
+    @GetMapping("/adminbracelets/new")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String addBraceletForm(Model model){
         Bracelets bracelet = new Bracelets();
@@ -34,34 +35,34 @@ public class BraceletsController {
         return "add_bracelet";
     }
 
-    @GetMapping("/bracelets/update/{id}")
+    @GetMapping("/adminbracelets/update/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String updateBraceletForm(Model model, @PathVariable("id") Long id){
         Bracelets bracelet = braceletService.findBracelet(id);
         model.addAttribute("bracelet", bracelet);
         return "update_bracelet";
     }
-    @GetMapping("/bracelets/delete/{id}")
+    @GetMapping("/adminbracelets/delete/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String deleteBracelet(@PathVariable("id") Long id) {
         braceletService.deleteBracelets(id);
-        return "redirect:/bracelets";
+        return "redirect:/adminbracelets";
     }
 
-    @PostMapping("/bracelets/update/{id}")
+    @PostMapping("/adminbracelets/update/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String updateBracelet(@PathVariable("id") Long id, @ModelAttribute("bracelet") Bracelets bracelets){
         Bracelets myBracelet = braceletService.findBracelet(id);
         myBracelet = bracelets;
         braceletService.saveBracelets(myBracelet);
-        return "redirect:/bracelets";
+        return "redirect:/adminbracelets";
     }
 
-    @PostMapping("/bracelets")
+    @PostMapping("/adminbracelets")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String saveBracelet(@ModelAttribute("bracelet") Bracelets bracelets){
         braceletService.saveBracelets(bracelets);
-        return "redirect:/bracelets";
+        return "redirect:/adminbracelets";
     }
 
 

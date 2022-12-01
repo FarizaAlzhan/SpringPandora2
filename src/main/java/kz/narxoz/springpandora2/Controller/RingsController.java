@@ -22,13 +22,14 @@ public class RingsController {
     }
 
     @GetMapping("/adminrings")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String adminrings(Model model){
         model.addAttribute("rings", ringsService.findAllRings());
         return "adminrings";
     }
 
 
-    @GetMapping("/rings/new")
+    @GetMapping("/adminrings/new")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String addRingForm(Model model){
         Rings ring = new Rings();
@@ -36,34 +37,34 @@ public class RingsController {
         return "add_rings";
     }
 
-    @GetMapping("/rings/update/{id}")
+    @GetMapping("/adminrings/update/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String updateRingForm(Model model, @PathVariable("id") Long id){
         Rings rings = ringsService.findRing(id);
         model.addAttribute("ring", rings);
         return "update_ring";
     }
-    @GetMapping("/rings/delete/{id}")
+    @GetMapping("/adminrings/delete/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String deleteRing(@PathVariable("id") Long id) {
         ringsService.deleteRings(id);
-        return "redirect:/rings";
+        return "redirect:/adminrings";
     }
 
-    @PostMapping("/rings/update/{id}")
+    @PostMapping("/adminrings/update/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String updateRing(@PathVariable("id") Long id, @ModelAttribute("rings") Rings rings){
         Rings myring = ringsService.findRing(id);
         myring = rings;
         ringsService.saveRings(myring);
-        return "redirect:/rings";
+        return "redirect:/adminrings";
     }
 
-    @PostMapping("/rings")
+    @PostMapping("/adminrings")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String saveRing(@ModelAttribute("ring") Rings rings){
         ringsService.saveRings(rings);
-        return "redirect:/rings";
+        return "redirect:/adminrings";
     }
 
 

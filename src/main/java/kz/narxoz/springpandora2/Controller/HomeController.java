@@ -1,7 +1,6 @@
 package kz.narxoz.springpandora2.Controller;
 
 import kz.narxoz.springpandora2.Entity.Auth.Users;
-import kz.narxoz.springpandora2.Service.CategoryService;
 import kz.narxoz.springpandora2.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -21,15 +20,12 @@ public class HomeController {
     @Autowired
     private UserService userService;
 
-    @Autowired
 
-    private CategoryService categoryService;
 
 
     @GetMapping(value = "/")
-    public String homepage(Model model){
+    public String homepage(){
 
-        model.addAttribute("category", categoryService.findAllCategory());
         return "Home";
     }
 

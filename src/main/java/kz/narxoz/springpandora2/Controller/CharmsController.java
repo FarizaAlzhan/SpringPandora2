@@ -24,13 +24,14 @@ public class CharmsController {
         return "charms";
     }
     @GetMapping("/admincharms")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String admincharms(Model model){
         model.addAttribute("charms", charmsService.findAllCharms());
         return "admincharms";
     }
 
 
-    @GetMapping("/charms/new")
+    @GetMapping("/admincharms/new")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String addCharmForm(Model model){
         Charms charm = new Charms();
@@ -38,34 +39,34 @@ public class CharmsController {
         return "add_charm";
     }
 
-    @GetMapping("/charms/update/{id}")
+    @GetMapping("/admincharms/update/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String updateCharmForm(Model model, @PathVariable("id") Long id){
         Charms charms = charmsService.findCharm(id);
         model.addAttribute("charm", charms);
         return "update_charm";
     }
-    @GetMapping("/charms/delete/{id}")
+    @GetMapping("/admincharms/delete/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String deleteCharm(@PathVariable("id") Long id) {
         charmsService.deleteCharms(id);
-        return "redirect:/charms";
+        return "redirect:/admincharms";
     }
 
-    @PostMapping("/charms/update/{id}")
+    @PostMapping("/admincharms/update/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String updateCharm(@PathVariable("id") Long id, @ModelAttribute("charms") Charms charms){
         Charms mycharm = charmsService.findCharm(id);
         mycharm = charms;
         charmsService.saveCharms(mycharm);
-        return "redirect:/charms";
+        return "redirect:/admincharms";
     }
 
-    @PostMapping("/charms")
+    @PostMapping("/admincharms")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String saveCharm(@ModelAttribute("charms") Charms charms){
         charmsService.saveCharms(charms);
-        return "redirect:/charms";
+        return "redirect:/admincharms";
     }
 
 

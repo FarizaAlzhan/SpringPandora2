@@ -24,6 +24,7 @@ public class EarringsController {
         return "earrings";
     }
     @GetMapping("/adminearrings")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String adminearrings(Model model){
         model.addAttribute("earrings", earringsService.findAllEarrings());
         return "adminearrings";
@@ -31,7 +32,7 @@ public class EarringsController {
 
 
 
-    @GetMapping("/earrings/new")
+    @GetMapping("/adminearrings/new")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String addEarringForm(Model model){
         Earrings earring = new Earrings();
@@ -39,34 +40,34 @@ public class EarringsController {
         return "add_earring";
     }
 
-    @GetMapping("/earrings/update/{id}")
+    @GetMapping("/adminearrings/update/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String updateEarringForm(Model model, @PathVariable("id") Long id){
         Earrings earrings = earringsService.findEarring(id);
         model.addAttribute("earring", earrings);
         return "update_earring";
     }
-    @GetMapping("/earrings/delete/{id}")
+    @GetMapping("/adminearrings/delete/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String deleteEarring(@PathVariable("id") Long id) {
         earringsService.deleteEarrings(id);
-        return "redirect:/earrings";
+        return "redirect:/adminearrings";
     }
 
-    @PostMapping("/earrings/update/{id}")
+    @PostMapping("/adminearrings/update/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String updateEarring(@PathVariable("id") Long id, @ModelAttribute("earrings") Earrings earrings){
         Earrings myearring = earringsService.findEarring(id);
         myearring = earrings;
         earringsService.saveEarrings(myearring);
-        return "redirect:/earrings";
+        return "redirect:/adminearrings";
     }
 
-    @PostMapping("/earrings")
+    @PostMapping("/adminearrings")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String saveEarring(@ModelAttribute("earring") Earrings earrings){
         earringsService.saveEarrings(earrings);
-        return "redirect:/earrings";
+        return "redirect:/adminearrings";
     }
 
 

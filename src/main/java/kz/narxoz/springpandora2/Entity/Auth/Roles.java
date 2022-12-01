@@ -1,5 +1,4 @@
 package kz.narxoz.springpandora2.Entity.Auth;
-import kz.narxoz.springpandora2.Entity.Category;
 import lombok.AllArgsConstructor;
 import lombok.*;
 import lombok.NoArgsConstructor;
