@@ -1,26 +1,34 @@
 <!DOCTYPE html>
-<html  xmlns:th="http://www.thymeleaf.org"
-       xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
-       lang="en">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      lang="en">
 <head>
     <title>Main page</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" type="text/css" href="C:\Users\001\IdeaProjects\SpringPandora2\src\main\resources\static\css\style.css">
+    <link rel="stylesheet" type="text/css"
+          href="C:\Users\001\IdeaProjects\SpringPandora2\src\main\resources\static\css\style.css">
 
 </head>
 <body>
 <div class="container">
     <div class="album py-2 px-5 mx-4 bg-light">
         <div class="col-md-12">
-            <nav class="navbar navbar-expand-sm navbar-light bg-light" aria-label="Third navbar example" th:fragment="header">
+            <nav class="navbar navbar-expand-sm navbar-light bg-light" aria-label="Third navbar example"
+                 th:fragment="header">
                 <a class="navbar-brand" th:href="@{'/'}" style="margin-left: 215px">
                     <img src="https://pandora.kz/local/templates/pandora/assets/images/img-logo.svg" alt="img-logo">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -29,32 +37,37 @@
                             <a class="nav-link active" aria-current="page" th:href="@{'/'}">Категорий</a>
                         </li>
                         <li class="nav-item" sec:authorize="isAuthenticated()">
-                            <a class="nav-link active" th:href="@{'/welcome'}" >Добро пожаловать!</a>
+                            <a class="nav-link active" th:href="@{'/welcome'}">Добро пожаловать!</a>
                         </li>
                         <li class="nav-item" sec:authorize="hasRole('ROLE_ADMIN')">
-                            <a class="nav-link active" th:href="@{'/administration'}" >Изменение данных</a>
+                            <a class="nav-link active" th:href="@{'/administration'}">Изменение данных</a>
                         </li>
 
                         <li class="nav-item" sec:authorize="isAnonymous()">
                             <a class="nav-link" th:href="@{'/login'}">login</a>
                         </li>
-                        <li class="nav-item" sec:authorize="isAnonymous()" >
+                        <li class="nav-item" sec:authorize="isAnonymous()">
                             <a class="nav-link" th:href="@{'/register'}">Register</a>
                         </li>
                         <li class="nav-item" sec:authorize="isAuthenticated()">
-                            <a class="nav-link" href="JavaScript:void(0)" onclick="document.getElementById('logoutFormId').submit()">Logout</a>
+                            <a class="nav-link" href="JavaScript:void(0)"
+                               onclick="document.getElementById('logoutFormId').submit()">Logout</a>
                         </li>
-                        <form th:action="@{'/logout'}" method="post" id="logoutFormId" sec:authorize="isAuthenticated()">
+                        <form th:action="@{'/logout'}" method="post" id="logoutFormId"
+                              sec:authorize="isAuthenticated()">
 
                         </form>
                         <li class="nav-item dropdown">
-                            <a class="nav-link  dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #ffcad4" >
-                                705 925 11 11
+                            <a class="nav-link  dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false" style="color: #ffcad4; ">
+                                <b style = "font-family: 'Baskerville Old Face'">705 925 11 11</b>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">8 705 924 11 11</a></li><br>
+                                <li><a class="dropdown-item" href="#">8 705 924 11 11</a></li>
+                                <br>
                                 <h6>Номер телефона</h6>
-                                <li><a class="dropdown-item" href="#">8 727 338 20 30</a></li><br>
+                                <li><a class="dropdown-item" href="#">8 727 338 20 30</a></li>
+                                <br>
                                 <h6>Городской</h6>
                                 <li><a class="dropdown-item" href="#">support@pandora.kz</a></li>
                                 <p>График работы контакт-центра:</p><br>
