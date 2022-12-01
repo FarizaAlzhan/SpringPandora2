@@ -17,7 +17,7 @@
     <div class="album py-2 px-5 mx-4 bg-light">
         <div class="col-md-12">
 <nav class="navbar navbar-expand-sm navbar-light bg-light" aria-label="Third navbar example" th:fragment="header">
-    <a class="navbar-brand" th:href="@{'/'}">
+    <a class="navbar-brand" th:href="@{'/'}" style="margin-left: 215px">
         <img src="https://pandora.kz/local/templates/pandora/assets/images/img-logo.svg" alt="img-logo">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +35,7 @@
                 <a class="nav-link active" th:href="@{'/bracelets/new'}" >Add new </a>
             </li>
 
-            <li class="nav-item" sec:authorize="isAnonymous()" >
+            <li class="nav-item" sec:authorize="isAnonymous()">
                 <a class="nav-link" th:href="@{'/login'}">login</a>
             </li>
             <li class="nav-item" sec:authorize="isAnonymous()" >
@@ -62,6 +62,9 @@
                 </ul>
             </li>
         </ul>
+        <li class="nav-item" sec:authorize="isAnonymous() " style="margin-left: 400px">
+            <a class="nav-link" th:href="@{'/login'}">login</a>
+        </li>
     </div>
 </nav>
         </div>
