@@ -21,9 +21,9 @@
 
 <body >
 <div class="alert  alert-dismissible fade show" role="alert" style="background-color: #ffcad4; height: 57px" >
-      <p align="center">
-          <img  align="center" src="https://pandora.kz/upload/resize_cache/iblock/31c/40_40_1/31cd18d0710243b1d7d6853f9662fe8d.png" style="width: 40px">
-          Подпишись на рассылку — получи -15% на первую покупку!  </p>
+    <p align="center">
+        <img  align="center" src="https://pandora.kz/upload/resize_cache/iblock/31c/40_40_1/31cd18d0710243b1d7d6853f9662fe8d.png" style="width: 40px">
+        Подпишись на рассылку — получи -15% на первую покупку!  </p>
     <button  type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 <div th:insert="navbar.html :: header"><br>
@@ -55,72 +55,58 @@
 </div>
 
 
-                <div class="row row-cols-1 row-cols-2 row-cols-md-3 g-3">
-                        <div class="col-6">
-                    <div class="card" style="width: 170px; height: 200px; margin-left: 16px; margin-right: 9px;">
-                        <a><img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:105px; width:105px;"  src="https://pandora.kz/upload/iblock/1a9/1a9a99fbb6cd42192e4cc4fab4cfd0f0.png"></a>
-                            <div class="card-body">
-                                <a  class="buttoncard" th:href="@{'/charms'}">
-                                 Шармы
-                                    </a>
-                            </div>
-                        </div>
-                        </div>
+<div class="row row-cols-1 row-cols-2 row-cols-md-3 g-3" style="margin-left: 750px; margin-top: 20px">
+    <div class="card" style="width: 170px; height: 200px; margin-left: 16px; margin-right: 9px;">
+        <a><img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:105px; width:105px;"  src="https://pandora.kz/upload/iblock/1a9/1a9a99fbb6cd42192e4cc4fab4cfd0f0.png"></a>
+        <div class="card-body">
+            <a  class="buttoncard" th:href="@{'/charms'}">
+                Шармы
+            </a>
+        </div>
+    </div>
 
-                 <div class="col-6">
-                    <div class="card" style="width: 170px; height: 200px; margin-left: 16px; margin-right: 9px;">
-                        <a><img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:105px; width:105px;" src="https://pandora.kz/upload/iblock/974/974963d98e4f1c09a61fe201f38ca8cb.png"></a>
-                        <div class="card-body">
-                            <a  class="buttoncard" th:href="@{'/rings'}">
-                                Кольца
-                            </a>
-                        </div>
-                    </div>
-                 </div>
-                <div class="col-sm-6">
-                    <div class="card" style="width: 170px; height: 200px; margin-left: 16px; margin-right: 9px;">
-                        <a><img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:105px; width:105px;"  src="https://pandora.kz/upload/iblock/b81/b81ac296ae4f91ab5a13f7c3e73acd89.png"></a>
-                        <div class="card-body">
-                            <a class="buttoncard" th:href="@{'/bracelets'}">
-                                Браслеты
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                    <div class="col-sm-6">
-                    <div class="card" style="width: 170px; height: 200px; margin-left: 16px; margin-right: 9px;">
-                        <a><img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:105px; width:105px;" src="https://pandora.kz/upload/iblock/dc2/dc2ac2295f57319d719b104e2eb70ed4.png"></a>
-                        <div class="card-body">
-                            <a  class="buttoncard" th:href="@{'/earrings'}">
-                                Серьги
-                            </a>
-                        </div>
-                    </div>
-                    </div>
-                        <div class="col-sm-6">
-                    <div class="card" style="width: 170px; height: 200px; margin-left: 16px; margin-right: 9px;">
-                        <a><img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:105px; width:105px;"  src="https://pandora.kz/upload/iblock/cc8/cc80f7fd207dbdaa8cc5eb33347c18e6.png"></a>
-                        <div class="card-body">
-                            <a  class="buttoncard" th:href="@{'/pendants'}">
-                                Колье и подвески
-                            </a>
-                          </div>
-                        </div>
-                    </div>
-                 <div class="col-sm-6">
-                    <div class="card" style="width: 170px; height: 200px; margin-left: 16px; margin-right: 9px;">
-                        <a><img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:105px; width:105px;" src="https://pandora.kz/upload/iblock/742/74219ca84fb8772db0c47bccad8224a1.png" ></a>
-                        <div class="card-body">
-                            <a  class="buttoncard" th:href="@{'/collections'}">
-                                Коллекции
-                            </a>
-                        </div>
-                    </div>
-                </div>
-         </div>
+    <div class="card" style="width: 170px; height: 200px; margin-left: 16px; margin-right: 9px;">
+        <a><img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:105px; width:105px;" src="https://pandora.kz/upload/iblock/974/974963d98e4f1c09a61fe201f38ca8cb.png"></a>
+        <div class="card-body">
+            <a  class="buttoncard" th:href="@{'/rings'}">
+                Кольца
+            </a>
+        </div>
+    </div>
 
-
-
-
+    <div class="card" style="width: 170px; height: 200px; margin-left: 16px; margin-right: 9px;">
+        <a><img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:105px; width:105px;"  src="https://pandora.kz/upload/iblock/b81/b81ac296ae4f91ab5a13f7c3e73acd89.png"></a>
+        <div class="card-body">
+            <a class="buttoncard" th:href="@{'/bracelets'}">
+                Браслеты
+            </a>
+        </div>
+    </div>
+    <div class="card" style="width: 170px; height: 200px; margin-left: 16px; margin-right: 9px;">
+        <a><img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:105px; width:105px;" src="https://pandora.kz/upload/iblock/dc2/dc2ac2295f57319d719b104e2eb70ed4.png"></a>
+        <div class="card-body">
+            <a  class="buttoncard" th:href="@{'/earrings'}">
+                Серьги
+            </a>
+        </div>
+    </div>
+    <div class="card" style="width: 170px; height: 200px; margin-left: 16px; margin-right: 9px;">
+        <a><img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:105px; width:105px;"  src="https://pandora.kz/upload/iblock/cc8/cc80f7fd207dbdaa8cc5eb33347c18e6.png"></a>
+        <div class="card-body">
+            <a  class="buttoncard" th:href="@{'/pendants'}">
+                Колье и подвески
+            </a>
+        </div>
+    </div>
+    <div class="card" style="width: 170px; height: 200px; margin-left: 16px; margin-right: 9px;">
+        <a><img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:105px; width:105px;" src="https://pandora.kz/upload/iblock/742/74219ca84fb8772db0c47bccad8224a1.png" ></a>
+        <div class="card-body">
+            <a  class="buttoncard" th:href="@{'/collections'}">
+                Коллекции
+            </a>
+        </div>
+    </div>
+</div>
+</div>
 </body>
 </html>
