@@ -35,7 +35,7 @@ public class PendantsController {
     public String addPendantsForm(Model model){
         Pendants pendants = new Pendants();
         model.addAttribute("pendant", pendants);
-        return "adminpendants";
+        return "add_pendant";
     }
 
     @GetMapping("/adminpendants/update/{id}")

@@ -11,6 +11,9 @@
 
 </div>
 <body>
+<center>
+<a th:href="@{/adminbracelets/new}"  class="btn btn-outline btn-md mb-3 mt-3" style="border-color: hotpink; color: hotpink">Добавить новый браслет</a>
+</center>
 <div class="row row-cols-1 row-cols-2 row-cols-md-3 g-3">
     <div th:each="bracelet: ${bracelets}">
     <div class="card" style="width: 22rem; height: 35rem; margin-left: 21px; margin-right: 16px;">
@@ -27,10 +30,8 @@
                         <span th:text="${bracelet.getOldprice()}"></span>
                     </strike>
                 </div>
-            <a th:href="@{/adminbracelets/update/{id}(id=${bracelet.getId()})}" class="btn btn-primary btn-md mb-3">EDIT</a>
-            <a th:href="@{/adminbracelets/delete/{id}(id=${bracelet.getId()})}" class="btn btn-danger btn-md mb-3">DELETE</a>
-            <a th:href="@{/adminbracelets/new}"  class="btn btn-warning btn-md mb-3">ADD NEW </a>
-
+            <a th:href="@{/adminbracelets/update/{id}(id=${bracelet.getId()})}" class="btn btn-outline btn-md mb-3" style="border-color: hotpink; color: hotpink">Изменить</a>
+            <a th:href="@{/adminbracelets/delete/{id}(id=${bracelet.getId()})}" class="btn btn-outline btn-md mb-3" style="border-color: hotpink; color: hotpink">Удалить</a>
         </div>
         </div>
 </div>
