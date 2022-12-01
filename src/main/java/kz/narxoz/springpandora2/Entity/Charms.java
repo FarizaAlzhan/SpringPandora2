@@ -30,17 +30,9 @@ public class Charms {
     @Column(name = "description",length = 300,nullable = false)
     private String description;
 
-    @Column(name = "characteristics", nullable = false)
-    private String characteristics;
-
-    @Column(name = "new_product", nullable = false)
-    private Boolean New_product;
 
     private String image;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "category_id")
-    private Category category;
 }
 
 

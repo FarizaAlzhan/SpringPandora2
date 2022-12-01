@@ -23,48 +23,49 @@ public class PendantsController {
         return "pendants";
     }
     @GetMapping("/adminpendants")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String adminpendants(Model model){
         model.addAttribute("pendants", pendantsService.findAllPendants());
         return "adminpendants";
     }
 
 
-    @GetMapping("/pendants/new")
+    @GetMapping("/adminpendants/new")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String addPendantsForm(Model model){
         Pendants pendants = new Pendants();
         model.addAttribute("pendant", pendants);
-        return "pendants";
+        return "adminpendants";
     }
 
-    @GetMapping("/pendants/update/{id}")
+    @GetMapping("/adminpendants/update/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String updatePendantsForm(Model model, @PathVariable("id") Long id){
         Pendants pendant = pendantsService.findPendant(id);
         model.addAttribute("pendant", pendant);
         return "update_pendant";
     }
-    @GetMapping("/pendants/delete/{id}")
+    @GetMapping("/adminpendants/delete/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String deletePendant(@PathVariable("id") Long id) {
         pendantsService.deletePendants(id);
-        return "redirect:/pendants";
+        return "redirect:/adminpendants";
     }
 
-    @PostMapping("/pendants/update/{id}")
+    @PostMapping("/adminpendants/update/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String updatePendant(@PathVariable("id") Long id, @ModelAttribute("pendant") Pendants pendants){
         Pendants myPendants = pendantsService.findPendant(id);
         myPendants = pendants;
         pendantsService.savePendants(myPendants);
-        return "redirect:/pendants";
+        return "redirect:/adminpendants";
     }
 
-    @PostMapping("/pendants")
+    @PostMapping("/adminpendants")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String savePendants(@ModelAttribute("pendant") Pendants pendants){
         pendantsService.savePendants(pendants);
-        return "redirect:/pendants";
+        return "redirect:/adminpendants";
     }
 
 

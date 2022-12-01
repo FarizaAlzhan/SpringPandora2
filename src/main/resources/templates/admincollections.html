@@ -27,9 +27,9 @@
                         <span th:text="${collection.getOldprice()}"></span>
                     </strike>
                 </div>
-                <a th:href="@{/collections/update/{id}(id=${collection.getId()})}" class="btn btn-primary btn-md mb-3">EDIT</a>
-                <a th:href="@{/collections/delete/{id}(id=${collection.getId()})}" class="btn btn-danger btn-md mb-3">DELETE</a>
-                <a th:href="@{/collections/new}"  class="btn btn-warning btn-md mb-3">ADD NEW </a>
+                <a th:href="@{/admincollections/update/{id}(id=${collection.getId()})}" class="btn btn-primary btn-md mb-3">EDIT</a>
+                <a th:href="@{/admincollections/delete/{id}(id=${collection.getId()})}" class="btn btn-danger btn-md mb-3">DELETE</a>
+                <a th:href="@{/admincollections/new}"  class="btn btn-warning btn-md mb-3">ADD NEW </a>
             </div>
         </div>
     </div>

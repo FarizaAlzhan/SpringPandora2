@@ -27,9 +27,9 @@
                         <span th:text="${earring.getOldprice()}"></span>
                     </strike>
                 </div>
-                <a th:href="@{/earrings/update/{id}(id=${earring.getId()})}" class="btn btn-primary btn-md mb-3">EDIT</a>
-                <a th:href="@{/earrings/delete/{id}(id=${earring.getId()})}" class="btn btn-danger btn-md mb-3">DELETE</a>
-                <a th:href="@{/earrings/new}"  class="btn btn-warning btn-md mb-3">ADD NEW </a>
+                <a th:href="@{/adminearrings/update/{id}(id=${earring.getId()})}" class="btn btn-primary btn-md mb-3">EDIT</a>
+                <a th:href="@{/adminearrings/delete/{id}(id=${earring.getId()})}" class="btn btn-danger btn-md mb-3">DELETE</a>
+                <a th:href="@{/adminearrings/new}"  class="btn btn-warning btn-md mb-3">ADD NEW </a>
             </div>
         </div>
     </div>
