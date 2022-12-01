@@ -26,7 +26,7 @@ public class CollectionsController {
         return "collections";
     }
     @GetMapping("/admincollections")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+
     public String admincollections(Model model){
         model.addAttribute("collections", collectionsService.findAllCollections());
         return "admincollections";
@@ -34,7 +34,7 @@ public class CollectionsController {
 
 
     @GetMapping("/admincollections/new")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+
     public String addCollectionForm(Model model){
         Collections collection = new Collections();
         model.addAttribute("collections", collection);
@@ -42,21 +42,21 @@ public class CollectionsController {
     }
 
     @GetMapping("/admincollections/update/{id}")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+
     public String updateCollectionForm(Model model, @PathVariable("id") Long id){
         Collections collections = collectionsService.findCollection(id);
         model.addAttribute("collection", collections);
         return "update_collection";
     }
     @GetMapping("/admincollections/delete/{id}")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+
     public String deleteCollection(@PathVariable("id") Long id) {
         collectionsService.deleteCollections(id);
         return "redirect:/admincollections";
     }
 
     @PostMapping("/admincollections/update/{id}")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+
     public String updateCollection(@PathVariable("id") Long id, @ModelAttribute("collections") Collections collections){
         Collections mycollection = collectionsService.findCollection(id);
         mycollection = collections;
@@ -65,7 +65,7 @@ public class CollectionsController {
     }
 
     @PostMapping("/admincollections")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+
     public String saveCollection(@ModelAttribute("collection") Collections collections){
         collectionsService.saveCollections(collections);
         return "redirect:/admincollections";

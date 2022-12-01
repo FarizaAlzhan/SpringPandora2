@@ -31,7 +31,6 @@ public class EarringsController {
     }
 
 
-
     @GetMapping("/adminearrings/new")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String addEarringForm(Model model){

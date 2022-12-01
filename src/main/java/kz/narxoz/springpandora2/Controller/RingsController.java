@@ -34,7 +34,7 @@ public class RingsController {
     public String addRingForm(Model model){
         Rings ring = new Rings();
         model.addAttribute("rings", ring);
-        return "add_rings";
+        return "add_ring";
     }
 
     @GetMapping("/adminrings/update/{id}")

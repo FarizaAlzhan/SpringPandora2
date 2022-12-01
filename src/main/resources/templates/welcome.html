@@ -10,6 +10,8 @@
 <div th:insert="navbar.html :: header"><br>
 </div>
 <body>
-<h1>Hello</h1>
+<center>
+<h1 th:inline="text" style="background-color: #f2a1b2; font-size: 30px; color: azure">Добро пожаловать! [[${#httpServletRequest.remoteUser}]]</h1>
+</center>
 </body>
 </html>
