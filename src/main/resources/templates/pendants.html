@@ -13,7 +13,7 @@
 <body>
 <div class="row row-cols-1 row-cols-2 row-cols-md-3 g-3">
     <div th:each="pendant: ${pendants}">
-        <div class="card" style="width: 22rem; height: 27rem; margin-left: 21px; margin-right: 16px;">
+        <div class="card" style="width: 22rem; height: 35rem; margin-left: 21px; margin-right: 16px;">
             <div class="card-body">
                 <img class="card-img-top" style="margin-left: 11px; margin-top: 13px; height:250px; width:250px;" th:src="@{'images/' + ${pendant.image}}" alt="">
                 <h6
@@ -22,7 +22,7 @@
                 <p th:text="${pendant.getDescription()}">
                 </p>
                 <div class="product_price">
-                    <span th:text="${pendant.getPrice()}"></span><br>
+                    <span th:text="${pendant.getPrice()}">тг</span><br>
                     <strike th:unless="${pendant.getOldprice()} == 0">
                         <span th:text="${pendant.getOldprice()}"></span>
                     </strike>
