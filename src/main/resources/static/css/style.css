@@ -6,3 +6,127 @@
     letter-spacing: .3px;
     color: #f2a1b2;
 }
+
+/*Header*/
+.image_nav {
+    position: relative;
+    margin-top: -15px;
+    right: 7%;
+}
+
+.navbar_number {
+    font-family: 'M+ 1p', Arial, -apple-system-body, sans-serif;
+}
+
+/*EndHeader*/
+
+/*Main*/
+.cards_items {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    text-decoration-line: none;
+}
+
+/*Media*/
+@media (max-width: 995px) {
+    .card {
+        width: 100%;
+    }
+}
+
+.card_back {
+    background-color: whitesmoke;
+    border: 1px solid whitesmoke;
+}
+
+.cards_items a {
+    color: black;
+    text-decoration-line: none;
+}
+
+.cards_items a:hover {
+    color: hotpink;
+}
+
+.cards_items img {
+    width: 94%;
+    background-color: whitesmoke;
+}
+
+.hyper_text {
+    position: relative;
+    margin-top: -17px;
+}
+
+/*Cards*/
+.cards_1_2 {
+    position: relative;
+    width: 50%;
+    top: -21%;
+    background-color: hotpink;
+}
+
+/*EndCards*/
+
+/*Main half*/
+.text_main {
+    font-family: 'M+ 1p', Arial, -apple-system-body, sans-serif;
+    font-weight: normal;
+}
+
+.text_main_category {
+    color: hotpink;
+}
+
+.text_main_name {
+    font-weight: bolder;
+}
+
+.text_main_disc {
+    font-family: inherit;
+    color: grey;
+}
+
+.main_button {
+    font-size: 14px;
+    position: relative;
+    background-color: white;
+    display: inline-block;
+    padding: 21px 75px 20px;
+    text-decoration: none;
+    letter-spacing: 2.1px;
+    text-transform: uppercase;
+    color: #27251f;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #f2a1b2;
+    border-radius: 2px;
+}
+
+.main_button:hover {
+    transition: 0.5s;
+    border: 1px solid deeppink;
+}
+
+.image__ {
+    width: 51%;
+    position: absolute;
+    margin-top: -15%;
+    left: 33%;
+}
+image__2{
+    width: 800px;
+}
+@media (max-width: 1195px) {
+    .image__2{
+        width: 700px;
+    }
+}
+@media (max-width: 993px) {
+    .image__2{
+        width: 500px;
+    }
+}
+/*Main*/
