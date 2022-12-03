@@ -76,7 +76,7 @@ public class HomeController {
             newUser.setPassword(password);
             newUser.setEmail(email);
             if (userService.createUser(newUser)!=null){
-                return "redirect:/register?success";
+                return "redirect:/welcome";
             }
 
         }
