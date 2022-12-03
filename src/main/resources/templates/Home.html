@@ -16,13 +16,52 @@
 
 <body>
 <!--InfoBar-->
-<div th:insert="Assets/Components/infoPage :: infoBar"></div>
+<div >
+    <div class="alert  alert-dismissible fade show" role="alert" style="background-color: #ffcad4; height: 57px">
+        <p align="center">
+            <img align="center"
+                 src="https://pandora.kz/upload/resize_cache/iblock/31c/40_40_1/31cd18d0710243b1d7d6853f9662fe8d.png"
+                 style="width: 40px">
+            Подпишись на рассылку — получи -15% на первую покупку! </p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+</div>
 
 <!--Header-->
-<div th:insert="Assets/navbar :: header"></div>
+<div th:insert="navbar.html :: header"></div>
 
 <!--Carusel-->
-<div th:insert="Assets/Components/carusel :: carusel"></div>
+
+<div th:fragment="carusel">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://pandora.kz/upload/iblock/93b/93ba330ec6edb88df7803a3f11ce61bd.jpeg"
+                     class="d-block w-100"
+                     alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://pandora.kz/upload/iblock/c75/c75b26f11f75f414f83f742fc1215ab4.jpg"
+                     class="d-block w-100"
+                     alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://pandora.kz/upload/iblock/c75/c75b26f11f75f414f83f742fc1215ab4.jpg"
+                     class="d-block w-100"
+                     alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
 
 
 <!--Cards-->
@@ -49,7 +88,84 @@
         <div class="col-sm-6">
             <center>
                 <!--CardsItem-->
-                <div th:insert="Assets/Components/Cards/cards :: cards"></div>
+                <div th:fragment="cards">
+                    <div class="row row-cols-1 row-cols-2 row-cols-md-3 g-3 cards_items">
+                        <div class="card card_back" style="width: 180px; height: 200px;">
+
+                            <a><img class="card-img-top"
+                                    src="https://pandora.kz/upload/iblock/1a9/1a9a99fbb6cd42192e4cc4fab4cfd0f0.png"></a>
+
+                            <div class="card-body hyper_text">
+                                <a class="buttoncard" th:href="@{'/charms'}">
+                                    Шармы
+                                </a>
+                                <hr class="cards_1_2">
+                            </div>
+                        </div>
+
+                        <div class="card card_back" style="width: 180px; height: 200px;">
+
+                            <a><img class="card-img-top"
+                                    src="https://pandora.kz/upload/iblock/974/974963d98e4f1c09a61fe201f38ca8cb.png"></a>
+
+                            <div class="card-body hyper_text">
+                                <a class="buttoncard" th:href="@{'/rings'}">
+                                    Шармы
+                                </a>
+                                <hr class="cards_1_2">
+                            </div>
+                        </div>
+
+                        <div class="card card_back" style="width: 180px; height: 200px;">
+
+                            <a><img class="card-img-top"
+                                    src="https://pandora.kz/upload/iblock/b81/b81ac296ae4f91ab5a13f7c3e73acd89.png"></a>
+
+                            <div class="card-body hyper_text">
+                                <a class="buttoncard" th:href="@{'/bracelets'}">
+                                    Браслеты
+                                </a>
+                                <hr class="cards_1_2">
+                            </div>
+                        </div>
+                        <div class="card card_back" style="width: 180px; height: 200px;">
+
+                            <a><img class="card-img-top"
+                                    src="https://pandora.kz/upload/iblock/dc2/dc2ac2295f57319d719b104e2eb70ed4.png"></a>
+
+                            <div class="card-body hyper_text">
+                                <a class="buttoncard" th:href="@{'/earrings'}">
+                                    Серьги
+                                </a>
+                                <hr class="cards_1_2">
+                            </div>
+                        </div>
+                        <div class="card card_back" style="width: 180px; height: 200px;">
+
+                            <a><img class="card-img-top"
+                                    src="https://pandora.kz/upload/iblock/cc8/cc80f7fd207dbdaa8cc5eb33347c18e6.png"></a>
+
+                            <div class="card-body hyper_text">
+                                <a class="buttoncard" th:href="@{'/pendants'}">
+                                    Колье и подвески
+                                </a>
+                                <hr class="cards_1_2">
+                            </div>
+                        </div>
+                        <div class="card card_back" style="width: 180px; height: 200px;">
+
+                            <a><img class="card-img-top"
+                                    src="https://pandora.kz/upload/iblock/742/74219ca84fb8772db0c47bccad8224a1.png"></a>
+
+                            <div class="card-body hyper_text">
+                                <a class="buttoncard" th:href="@{'/collections'}">
+                                    Коллекции
+                                </a>
+                                <hr class="cards_1_2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </center>
         </div>
     </div>
@@ -83,7 +199,194 @@
 </div>
 <!-- Footer -->
 
-<div class="mt-5" th:insert="Assets/footer :: footer"></div>
+<div class="mt-5" >
+    <div th:fragment="footer">
+        <footer class="bg-dark text-center text-white">
+            <!-- Grid container -->
+            <div class="container p-4">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <!-- Facebook -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                    ><i class="fab fa-facebook-f"></i
+                    ></a>
+
+                    <!-- Twitter -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                    ><i class="fab fa-twitter"></i
+                    ></a>
+
+                    <!-- Google -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                    ><i class="fab fa-google"></i
+                    ></a>
+
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                    ><i class="fab fa-instagram"></i
+                    ></a>
+
+                    <!-- Linkedin -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                    ><i class="fab fa-linkedin-in"></i
+                    ></a>
+
+                    <!-- Github -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                    ><i class="fab fa-github"></i
+                    ></a>
+                </section>
+                <!-- Section: Social media -->
+
+                <!-- Section: Form -->
+                <section class="">
+                    <form action="">
+                        <!--Grid row-->
+                        <div class="row d-flex justify-content-center">
+                            <!--Grid column-->
+                            <div class="col-auto">
+                                <p class="pt-2">
+                                    <strong>Sign up for our newsletter</strong>
+                                </p>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-md-5 col-12">
+                                <!-- Email input -->
+                                <div class="form-outline form-white mb-4">
+                                    <input type="email" id="form5Example21" class="form-control"/>
+                                    <label class="form-label" for="form5Example21">Email address</label>
+                                </div>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-auto">
+                                <!-- Submit button -->
+                                <button type="submit" class="btn btn-outline-light mb-4">
+                                    Subscribe
+                                </button>
+                            </div>
+                            <!--Grid column-->
+                        </div>
+                        <!--Grid row-->
+                    </form>
+                </section>
+                <!-- Section: Form -->
+
+                <!-- Section: Text -->
+                <section class="mb-4">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
+                        repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
+                        eum harum corrupti dicta, aliquam sequi voluptate quas.
+                    </p>
+                </section>
+                <!-- Section: Text -->
+
+                <!-- Section: Links -->
+                <section class="">
+                    <!--Grid row-->
+                    <div class="row">
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                            <h5 class="text-uppercase">Links</h5>
+
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#!" class="text-white">Link 1</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 2</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 3</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 4</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                            <h5 class="text-uppercase">Links</h5>
+
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#!" class="text-white">Link 1</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 2</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 3</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 4</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                            <h5 class="text-uppercase">Links</h5>
+
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#!" class="text-white">Link 1</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 2</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 3</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 4</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                            <h5 class="text-uppercase">Links</h5>
+
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#!" class="text-white">Link 1</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 2</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 3</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 4</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+                    </div>
+                    <!--Grid row-->
+                </section>
+                <!-- Section: Links -->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2020 Copyright:
+                <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+</div>
 
 <!-- Footer -->
 
